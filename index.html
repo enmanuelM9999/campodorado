@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campo Dorado - Espacio de Belleza Natural</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header y Navegación -->
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#home">
+                <div class="navbar-logo">
+                    <svg class="logo-svg" viewBox="0 0 100 100" width="40" height="40">
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="var(--gold)" stroke-width="3"/>
+                        <g class="logo-petals">
+                            <ellipse cx="50" cy="20" rx="8" ry="15" fill="var(--gold)" transform="rotate(0 50 50)"/>
+                            <ellipse cx="50" cy="20" rx="8" ry="15" fill="var(--gold)" transform="rotate(90 50 50)"/>
+                            <ellipse cx="50" cy="20" rx="8" ry="15" fill="var(--gold)" transform="rotate(180 50 50)"/>
+                            <ellipse cx="50" cy="20" rx="8" ry="15" fill="var(--gold)" transform="rotate(270 50 50)"/>
+                        </g>
+                        <circle cx="50" cy="50" r="8" fill="var(--gold-dark)"/>
+                    </svg>
+                    <h1 class="title is-4 has-text-gold ml-3">Campo Dorado</h1>
+                </div>
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item" href="#home">Inicio</a>
+                <a class="navbar-item" href="#about">Nosotros</a>
+                <a class="navbar-item" href="#services">Servicios</a>
+                <a class="navbar-item" href="#contact">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero is-large hero-bg">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-vcentered">
+                    <div class="column is-6">
+                        <div class="hero-content-card">
+                            <h1 class="title is-1">
+                                Campo Dorado
+                            </h1>
+                            <h2 class="subtitle is-3">
+                                Espacio de Belleza Natural
+                            </h2>
+                            <p class="is-size-5">
+                                Donde la calidez y luz del sol se combinan con el cuidado natural de las uñas, 
+                                creando una experiencia relajante y luminosa que te invita a brillar con naturalidad.
+                            </p>
+                            <div class="buttons mt-5">
+                                <a href="#services" class="button is-gold is-large">
+                                    <span>Nuestros Servicios</span>
+                                    <span class="icon">
+                                        <i class="fas fa-arrow-down"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Nosotros -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-6">
+                    <h2 class="title is-2 has-text-gold">Nuestra Esencia</h2>
+                    <p class="is-size-5 mb-4">
+                        Campo Dorado es un espacio de belleza inspirado en la calidez y luz del sol, 
+                        donde se combinan el cuidado natural de las uñas con una atención cercana y 
+                        una estética artística que evoca los tonos dorados de un campo de girasoles.
+                    </p>
+                    <p class="is-size-5 mb-4">
+                        Nuestra esencia está en ofrecer una experiencia relajante y luminosa, 
+                        priorizando productos saludables, detalles delicados y un ambiente que 
+                        invita a brillar con naturalidad.
+                    </p>
+                    <div class="features">
+                        <div class="feature-item">
+                            <span class="icon has-text-gold">
+                                <i class="fas fa-leaf"></i>
+                            </span>
+                            <span class="ml-3">Productos Naturales</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="icon has-text-gold">
+                                <i class="fas fa-heart"></i>
+                            </span>
+                            <span class="ml-3">Atención Personalizada</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="icon has-text-gold">
+                                <i class="fas fa-palette"></i>
+                            </span>
+                            <span class="ml-3">Arte en Cada Detalle</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Espacio Campo Dorado" class="rounded-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Servicios -->
+    <section id="services" class="section has-background-light">
+        <div class="container">
+            <h2 class="title is-2 has-text-centered has-text-gold mb-6">Nuestros Servicios</h2>
+            <div class="columns">
+                <!-- Manicura Natural -->
+                <div class="column is-4">
+                    <div class="card service-card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                     alt="Manicura Natural">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="title is-4 has-text-gold">Manicura Natural</h3>
+                            <p class="mb-4">
+                                Cuidado completo de las uñas de las manos con productos naturales, 
+                                priorizando la salud y el bienestar de tus uñas.
+                            </p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check has-text-gold"></i> Limpieza profunda</li>
+                                <li><i class="fas fa-check has-text-gold"></i> Productos naturales</li>
+                                <li><i class="fas fa-check has-text-gold"></i> Hidratación especial</li>
+                                <li><i class="fas fa-check has-text-gold"></i> Masaje relajante</li>
+                            </ul>
+                            <div class="has-text-centered mt-4">
+                                <button class="button is-gold whatsapp-btn" onclick="openWhatsApp('Manicura Natural')">
+                                    <span class="icon">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </span>
+                                    <span>Reservar</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arte en Uñas -->
+                <div class="column is-4">
+                    <div class="card service-card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                     alt="Arte en Uñas">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="title is-4 has-text-gold">Arte en Uñas</h3>
+                            <p class="mb-4">
+                                Expresa tu personalidad con diseños únicos y artísticos que reflejan 
+                                tu estilo y la estética dorada de Campo Dorado.
+                            </p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check has-text-gold"></i> Diseños personalizados</li>
+                                <li><i class="fas fa-check has-text-gold"></i> Técnicas artísticas</li>
+                                <li><i class="fas fa-check has-text-gold"></i> Colores únicos</li>
+                                <li><i class="fas fa-check has-text-gold"></i> Durabilidad garantizada</li>
+                            </ul>
+                            <div class="has-text-centered mt-4">
+                                <button class="button is-gold whatsapp-btn" onclick="openWhatsApp('Arte en Uñas')">
+                                    <span class="icon">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </span>
+                                    <span>Reservar</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pedicura Spa -->
+                <div class="column is-4">
+                    <div class="card service-card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                     alt="Pedicura Spa">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="title is-4 has-text-gold">Pedicura Spa</h3>
+                            <p class="mb-4">
+                                Experiencia de relajación completa para tus pies con tratamientos 
+                                spa que combinan cuidado y bienestar.
+                            </p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check has-text-gold"></i> Tratamiento spa completo</li>
+                                <li><i class="fas fa-check has-text-gold"></i> Exfoliación natural</li>
+                                <li><i class="fas fa-check has-text-gold"></i> Masaje relajante</li>
+                                <li><i class="fas fa-check has-text-gold"></i> Hidratación profunda</li>
+                            </ul>
+                            <div class="has-text-centered mt-4">
+                                <button class="button is-gold whatsapp-btn" onclick="openWhatsApp('Pedicura Spa')">
+                                    <span class="icon">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </span>
+                                    <span>Reservar</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="title is-2 has-text-centered has-text-gold mb-6">Contáctanos</h2>
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="contact-info">
+                        <h3 class="title is-4 has-text-gold mb-4">Información de Contacto</h3>
+                        <div class="contact-item">
+                            <span class="icon has-text-gold">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </span>
+                            <span class="ml-3">Lima, Perú</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon has-text-gold">
+                                <i class="fas fa-phone"></i>
+                            </span>
+                            <span class="ml-3">Teléfono: 926586014</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon has-text-gold">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            <span class="ml-3">Email: [Tu email aquí]</span>
+                        </div>
+                        
+                        <div class="has-text-centered mt-5">
+                            <button class="button is-gold is-large whatsapp-btn" onclick="openWhatsApp('Consulta General')">
+                                <span class="icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </span>
+                                <span>Contáctanos por WhatsApp</span>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer has-background-gold">
+        <div class="content has-text-centered">
+            <div class="footer-logo mb-4">
+                <svg class="logo-svg-footer" viewBox="0 0 100 100" width="60" height="60">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="white" stroke-width="3"/>
+                    <g class="logo-petals">
+                        <ellipse cx="50" cy="20" rx="8" ry="15" fill="white" transform="rotate(0 50 50)"/>
+                        <ellipse cx="50" cy="20" rx="8" ry="15" fill="white" transform="rotate(90 50 50)"/>
+                        <ellipse cx="50" cy="20" rx="8" ry="15" fill="white" transform="rotate(180 50 50)"/>
+                        <ellipse cx="50" cy="20" rx="8" ry="15" fill="white" transform="rotate(270 50 50)"/>
+                    </g>
+                    <circle cx="50" cy="50" r="8" fill="var(--gold-light)"/>
+                </svg>
+            </div>
+            <p class="has-text-white">
+                <strong>Campo Dorado</strong> - Espacio de Belleza Natural
+            </p>
+            <p class="has-text-white">
+                Donde brillas con naturalidad
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
