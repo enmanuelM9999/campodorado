@@ -121,6 +121,9 @@
     border-color: var(--gold);
     color: white;
     transition: all 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .button.is-gold:hover {
@@ -129,6 +132,24 @@
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
+}
+
+.button.is-gold:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(212, 175, 55, 0.4);
+}
+
+/* Mejoras específicas para dispositivos táctiles */
+@media (hover: none) and (pointer: coarse) {
+    .button.is-gold:hover {
+        transform: none;
+        box-shadow: 0 2px 4px rgba(212, 175, 55, 0.3);
+    }
+    
+    .button.is-gold:active {
+        background-color: var(--gold-dark);
+        transform: scale(0.98);
+    }
 }
 
 /* Hero Section con fondo de esmalte amarillo */
@@ -221,32 +242,12 @@
 .logo-svg:hover {
     transform: scale(1.1) rotate(5deg);
     filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.3));
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.logo-petals {
-    animation: logoFloat 3s ease-in-out infinite;
-}
-
-@keyframes logoFloat {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-}
-
-.navbar-logo:hover .logo-petals {
-    animation: logoRotate 2s ease-in-out infinite;
-}
-
-@keyframes logoRotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+/* Logo del navbar sin animaciones */
+.navbar-logo .logo-petals {
+    transition: all 0.3s ease;
 }
 
 .navbar-item:hover {
@@ -376,6 +377,12 @@
 .logo-svg-footer:hover {
     transform: scale(1.1) rotate(5deg);
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Logo del footer sin animaciones */
+.footer-logo .logo-petals {
+    transition: all 0.3s ease;
 }
 
 /* Animaciones suaves */
@@ -404,8 +411,72 @@
     transform: scale(1.1);
 }
 
+/* Imagen de fondo completa para móvil */
+.hero-bg-mobile {
+    display: none;
+}
+
 /* Responsive design mejorado */
 @media screen and (max-width: 768px) {
+    /* Ocultar el fondo original del hero en móvil */
+    .hero-bg {
+        background: none !important;
+    }
+    
+    /* Mostrar imagen de fondo completa para móvil */
+    .hero-bg-mobile {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60vh; /* Altura fija para la imagen */
+        background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('esmalteamarillo.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 1;
+    }
+    
+    /* Ajustar el hero-body para que la tarjeta aparezca debajo */
+    .hero-bg .hero-body {
+        position: relative;
+        z-index: 2;
+        margin-top: 60vh; /* Empujar el contenido debajo de la imagen */
+        padding-top: 2rem;
+        background-color: white;
+    }
+    
+    /* Ajustar la tarjeta de contenido para móvil */
+    .hero-content-card {
+        background-color: white;
+        backdrop-filter: none;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        margin: 0 1rem;
+        border-radius: 15px;
+        padding: 2rem;
+    }
+    
+    /* Asegurar que el contenedor del hero tenga la altura correcta */
+    .hero-bg {
+        min-height: 100vh;
+        position: relative;
+    }
+    
+    /* Ajustar el contenedor para móvil */
+    .hero-bg .container {
+        padding: 0;
+    }
+    
+    /* Hacer que la columna ocupe todo el ancho en móvil */
+    .hero-bg .columns {
+        margin: 0;
+    }
+    
+    .hero-bg .column {
+        padding: 0;
+    }
+    
     .hero-bg .title.is-1 {
         font-size: 2.5rem;
     }
@@ -414,13 +485,104 @@
         font-size: 1.5rem;
     }
     
-    .service-card {
-        margin-bottom: 2rem;
+    /* Optimizar la sección "Nuestra Esencia" para móvil */
+    #about .columns {
+        flex-direction: column-reverse; /* Imagen arriba, texto abajo */
     }
     
-    .contact-info,
-    .contact-form {
-        margin-bottom: 2rem;
+    #about .column.is-6 {
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    /* Reducir el tamaño de la imagen en móvil */
+    #about .rounded-image {
+        max-width: 100%;
+        height: 250px; /* Altura fija reducida */
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+    }
+    
+    /* Ajustar el texto de la sección about */
+    #about .title.is-2 {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    #about .is-size-5 {
+        font-size: 1rem !important;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+    
+    /* Optimizar las características */
+    #about .features {
+        margin-top: 1rem;
+    }
+    
+    #about .feature-item {
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+    }
+}
+
+/* Estilos adicionales para dispositivos móviles muy pequeños */
+@media screen and (max-width: 480px) {
+    .hero-bg-mobile {
+        height: 50vh; /* Reducir altura en pantallas muy pequeñas */
+    }
+    
+    .hero-bg .hero-body {
+        margin-top: 50vh;
+    }
+    
+    .hero-content-card {
+        margin: 0 0.5rem;
+        padding: 1.5rem;
+    }
+    
+    .hero-bg .title.is-1 {
+        font-size: 2rem;
+    }
+    
+    .hero-bg .subtitle.is-3 {
+        font-size: 1.2rem;
+    }
+    
+    .hero-content-card p {
+        font-size: 1rem;
+    }
+    
+    /* Ajustes adicionales para el botón en pantallas muy pequeñas */
+    .hero-content-card .button.is-gold.is-large {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+        min-height: 44px;
+        border-radius: 22px;
+    }
+    
+    .hero-content-card .button .icon {
+        font-size: 0.9em;
+    }
+    
+    /* Reducir aún más la imagen de "Nuestra Esencia" en pantallas muy pequeñas */
+    #about .rounded-image {
+        height: 200px; /* Altura aún más reducida */
+        border-radius: 8px;
+    }
+    
+    #about .title.is-2 {
+        font-size: 1.8rem;
+    }
+    
+    #about .is-size-5 {
+        font-size: 0.9rem !important;
+    }
+    
+    #about .feature-item {
+        font-size: 0.9rem;
     }
 }
 
@@ -622,5 +784,57 @@ p {
     .whatsapp-btn.is-large {
         padding: 0.8rem 1.5rem;
         font-size: 1rem;
+    }
+    
+    /* Ajustes específicos para el botón del hero en móvil */
+    .hero-content-card .button.is-gold.is-large {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+        margin-top: 1.5rem;
+        border-radius: 25px;
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    }
+    
+    /* Asegurar que el botón tenga suficiente espacio táctil en móvil */
+    .hero-content-card .buttons {
+        margin-top: 2rem;
+        width: 100%;
+    }
+    
+    .hero-content-card .button {
+        min-height: 48px; /* Altura mínima recomendada para dispositivos táctiles */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 100%;
+        touch-action: manipulation; /* Mejora la respuesta táctil */
+        -webkit-touch-callout: none; /* Desactiva el menú contextual en iOS */
+    }
+    
+    /* Asegurar que el botón sea completamente táctil en móvil */
+    .hero-content-card .button.is-gold {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* Efecto de ripple para dispositivos táctiles */
+    .hero-content-card .button.is-gold::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: width 0.3s ease, height 0.3s ease;
+    }
+    
+    .hero-content-card .button.is-gold:active::before {
+        width: 300px;
+        height: 300px;
     }
 }
